@@ -1,0 +1,18 @@
+{% extends 'index.html' %} <!--all tags and included file will come here-->
+{% load crispy_forms_tags %}
+{% block content %}
+<!-- <h1> Register Page</h1> -->
+<div class="container-fluid" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <h2 class="text-primary page-header text-center"><i class="fa fa-users"> Registration</i></h2>
+            <!-- {{form.as_p}} .as_p - used to align form -->
+            <form method="post" autocomplete="off">
+                {% csrf_token %}
+                {{form | crispy}}
+            <input type="submit" class="btn btn-primary w-100" value="Register">
+        </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
